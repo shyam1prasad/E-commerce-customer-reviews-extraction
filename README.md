@@ -5,45 +5,71 @@ To create a dataset where a product's specifications, cost, ratings are colocate
 
 # Goal:
 This dataset helps in analysing the reviews for a product collected from various E-commerce websites. Sentimental analysis or any other analysis can be done more accurately as the reviews are not biased for any website. 
+
 The gist made from the analysis of all the reviews will make the buyer more informative about the product to make his/her decision.
+
 This dataset can also be used to compare various products of the same category as all the specifications of the product are being listed.
+
 If a buyer from E-commerce site wishes to go for a new product released in the market, where there is no scope for its working reviews, this dataset helps him/her to find the similar product if any was released  before from any other brand, and can be aware of the problems/advantages it gave to customers and helps buyer to make his/her decision.
 
 # Tools/softwares used:
+
 Python
+
 Selenium
+
 Beautiful Soup
+
 Chromedriver 
 
 # Approach/methodology
 We chose mobiles as the category for this project. We did scrape all the relevant information for mobiles needed from couple of websites named flipkart.com and 91mobiles.com
 1. Flipkart:
+
 The Flipkart E-commerce site is of dynamic webpages which is highly developed.
+
 To scrap the information for each mobile, we need to go to the respective url for that mobile, which manually takes time. So we automated this using selenium and wrote a python script(Flipkart_reviews.ipymb), which did the job for us.
 # Plan for flipkart:
+
 we send the input to search key as "smartphone" through the script, which listed all the phones with almost 217 pages.
+
 we collected name,link,ratings from these pages and stored in a dictionary with name as the key and rest in a list as value
+
 we looped over this dictionary where each element has link to its respective page. Likewise we automated the process to open each page and collect information like all the specifications for that specific mobile phone. For reviews, we made a list and appended each review to it. Reviews are spread over various pages, so we again looped to every page and collected all the reviews in that page and stored in a list which inturn stored as a value for key"reviews" in the product's specific dictionary.
+
 So all the products information is present in their corresponding dictionaries and we appended this as a write operation into a json file. 
+
 All the loops are controlled by selenium and chromedriver
+
 This file finally contains all the information for each mobile phone in json format.
 
 2. 91mobiles.com:
+
 91mobiles.com is also an E-commerce website , where we can find the reviews for the product from amazon. This is a dynamic website, which is highly developed. This is a javascript webpage
 
 # Plan for 91mobiles.com:
 Here, the mobile phones are categorized according to their brands. So we used that as an advantage.
+
 We scraped and collected the links for the brands along with brand names.
+
 we looped over each brand link to get all the phones in that brand, here we collected individual mobile's information such as link for the mobile, along with mobile name. This is stored in a dictionary with mobile's name as the key.
+
 we looped over this dictionary to open the mobile's respective page, and scraped information like rating and how many users did gave the rating.
+
 For reviews, how many did find this review useful, as we are interested in amazon customer reviews, we found the filter element and sent keys "Amazon.in".
+
 All the reviews, useful count are collected into a dictionary and wrote these dictionaries as json into a file.
+
 Reviews are not in pagewise format, rather in a dynamic scroll type. so we used selenium to scroll the current web page to scrap the reviews. 
+
 All the loops are controlled by selenium and chromedriver.
 
 # Data integration:
 
-The two json files from flipkart and 91 mobiles needed to be merged into a single json where a product name will be the key to merge both sets.
+
+The two json files from flipkart and 91 mobiles needed to be merged into a single json where a product name will be the key to merge 
+both sets.
+
 We cleaned further some of the attributes where junk characters were observed, and finally merged into a single json with extra key as "amazon_reviews", where the values will be the reviews for that specific product from amazon.
 
 # Challenges faced:
