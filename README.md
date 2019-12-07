@@ -57,63 +57,120 @@ We cleaned further some of the attributes where junk characters were observed, a
 
 
 # Attribute name and its definition:
+
 name: It gives the name of the product.
+
 price: Information about the sale price of the product.
+
 rating: overall rating for a product given by users.
+
 reviews: This key gives information about reviews from main website, for us it is flipkart.
+
 amazon reviews: This key gives the reviews collected for that product from amazon users. along with information like how many found the corresponding review useful. This gives the weightage for the review.
+
 All the specifications are individually placed in below attributes.
 '3G': whether 3G compatible(Yes/No)
+
 Audio Formats: various audio formats supported
+
 Bluetooth Support: whether bluetooth is supported(Yes/No)
+
 Bluetooth Version: Version of Bluetooth
+
 Browse Type: Category of the product
+
 Color: Color of the product:
+
 Depth: depth of the phone
+
 Display Size: size of the display for phone
+
 Dual Camera Lens: which camers plays important role in dual camers
+
 Flash: description about flash
+
 Frame Rate: Video frame rate for mobile
+
 Full HD Recording: whether cmpatible for HD recording
+
 Graphics PPI: PPI for graphics in the phone
+
 Height: Height of the phone
+
 Hybrid Sim Slot: whether phone has Hybrid sim slot(Yes/No)
+
 In The Box: What does the closed box contains
+
 Internal Storage: Internal storage for the phone
+
 Internet Connectivity: Various bands supported for internet in the mobile
+
 Model Name: Model name of the phone
+
 Model Number: Model number of the phone which is unique.
+
 NFC: whether NFC is supported(YES/NO)
+
 Network Type: Various network types supported
+
 OTG Compatible: whether phone is OTG compatible
+
 Operating System: operating system installed
+
 Optical Zoom: Optical Zoom availability(YES/NO)
+
 Other Display Features: Other display features of the phone like contrast ratio etc.
+
 Other Features: Other features of the phone
+
 Phone Book: availability(Yes/No)
+
 Pre-installed Browser: Pre-installed web browser
+
 Primary Camera: lens for the rear camera
+
 Primary Camera Features: various highlighted features of primary camera
+
 Processor Type: Type of processor used
+
 Removable Battery: availability(Yes/No)
+
 Resolution: Resolution in pixels
+
 Resolution Type: Display type
+
 SAR Value: features of SAR value
+
 SIM Size: various sizes of sim's supported
+
 SIM Type: categories of sim's that can be used
+
 Secondary Camera: lens of front camera
+
 Secondary Camera Features: various features of secondary camera
+
 Sensors: Various sensors available
+
 Series: series of phone from that brand
+
 Speaker Phone: Availability(YES/NO)
+
 Supported Languages: various languages supported
+
 Touchscreen: availability(Yes/No)
+
 Video Formats: various video formats supported by phone
+
 Video Recording: availability(Yes/No)
+
 Warranty Summary: warranty provided by company
+
 Weight: weight of the phone
+
 Wi-Fi: availability(YES/NO)
+
 Wi-Fi Version: version of wi-fi
+
 Width: width of the phone
 
 
