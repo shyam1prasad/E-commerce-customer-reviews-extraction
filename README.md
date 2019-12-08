@@ -1,4 +1,5 @@
-## E-commerce-customer-reviews-extraction
+
+# E-commerce-customer-reviews-extraction
 
 # Objective:
 To create a dataset where a product's specifications, cost, ratings are colocated along with the reviews from various E-commerce sites.
@@ -66,20 +67,38 @@ All the loops are controlled by selenium and chromedriver.
 
 # Data integration:
 
+The data inserted was not in proper format, so we converted it to string and added few keys to make into a proper jsons structure.
 
-The two json files from flipkart and 91 mobiles needed to be merged into a single json where a product name will be the key to merge 
-both sets.
+Then we converted all the string back to json.
 
-We cleaned further some of the attributes where junk characters were observed, and finally merged into a single json with extra key as "amazon_reviews", where the values will be the reviews for that specific product from amazon.
+Changed the keys of json's dictionary from numbers to the product's name.
+
+junk characters from price column and name column are removed and replaced respectively.
+
+Repeated all the above steps for amazon dataset aswell.
+
+the two new datasets are merged basing on their names
+
+stored the merged dictionary into a json file
+
+converted json structure to csv using pandas dataframes where nulls are inserted for attributes absent for respective phones.
+
+Final csv and json merged datasets are generated.
 
 # Challenges faced:
+
 1. Flipkart is a commercial e-commerce website, where the filter to primarily fetch phones according to their brands was in their home page. We developed our code to scrap according to the structure, But as it is a commercial website, there was a sale happening on dec 1st and entire structure has been re-formatted from their end for sale. This made us to use another approach for fetching the mobiles, that was by search key.
+
 2. In 91mobiles, the reviews we can get by scrolling the page, which was quite a new task and we achieved it with selenium.
+
 3. While scraping, there was a high chance where site used to block us. If we focus on creating a single dictionary and store each element as a product, when it fails, all the stored information was locked and went of no use. So we followed a method to append each element to the file once it is done.
+
 4. This append further created a problem, as the file which gets individual dictionaries is not in a json format as the append just adds to the end of the file.
 --> we did convert the whole file to a string and and individually looped over a pattern and added numbers as the key to it. So it was into json format.
 
-5. Limitation: We can scrap from various sites but as these E-commerce sites are commercial, we are not allowed/authorized to scrap.
+5.There are some junk characters in price like Indian rupee symbol which are hidden and not being able to remove. Need to research more on how to remove them
+
+6. Limitation: We can scrap from various sites but as these E-commerce sites are commercial, we are not allowed/authorized to scrap.
 
 
 # Attribute name and its definition:
@@ -201,11 +220,23 @@ Width: width of the phone
 
 
 
+# Conclusion:
 
+Final datasets we produce are three, where in two for exclusively flipkart and amazon, other is the dataset where phones contain both amazon and Flipkart reviews.
 
+This dataset can be used in various ways. It is a pool of information for the specific phone.
 
+flipkart_data(JSON)--contains all the phones which are scraped from flipkart site with name as their key.
 
+amazon_data(JSON)--contains all the phones which are scraped from 91 mobiles site with name as their key and amazon reviews in their values.
 
+flip_amz(JSON)--contains the phones which are in both the datasets, and having both the reviews from flipkart and amazon.
+
+FLIPKART_AMAZON_CSV_FILE(CSV)-- contains the phones which are in both the datasets, and having both the reviews from flipkart and amazon. There are various attributes for different phones, so NULL's are inserted for no value.
+
+# Future Work:
+
+Need to analyze all the reviews for a particular smartphone by using various methods like text analytics and sentimental analysis with the help of natural language processing a final verdict or overall review should be given for the specific phone which covers the gist of almost all the customer reviews. This will help the customer to make his decision quicker than going through several reviews and being ended up in mess.
 
 
 
