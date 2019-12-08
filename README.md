@@ -30,7 +30,7 @@ We chose mobiles as the category for this project. We did scrape all the relevan
 The Flipkart E-commerce site is of dynamic webpages which is highly developed.
 
 To scrap the information for each mobile, we need to go to the respective url for that mobile, which manually takes time. So we automated this using selenium and wrote a python script(Flipkart_reviews.ipymb), which did the job for us.
-# Plan for flipkart:
+# Plan for flipkart: 
 
 we send the input to search key as "smartphone" through the script, which listed all the phones with almost 217 pages.
 
